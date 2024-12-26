@@ -1,50 +1,49 @@
 /* General Reset */
 html {
     scroll-behavior: smooth;
-    scroll-padding: var(--scroll-padding, 0rem);
+    scroll-padding: var(--scroll-padding, 0); /* Smooth scroll with padding */
 }
 
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ECF0F1;
-    color: #34495E;
+    background-color: #f0f8ff; /* Light sky blue background for a fresh look */
+    color: #2c3e50; /* Dark gray text for readability */
 }
 
-/* Primary Navigation */
+/* Navigation Bar */
 .primary-navigation {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    background-color: #1F618D;
-    padding: 10px 20px;
-    z-index: 10;
+    width: 100%;
+    background-color: #16a085; /* Teal color for the navigation bar */
+    color: white;
+    padding: 15px 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .primary-navigation ul {
     display: flex;
     justify-content: center;
+    gap: 30px;
     list-style: none;
+    margin: 0;
     padding: 0;
 }
 
-.primary-navigation ul li {
-    margin: 0 15px;
-}
-
-.primary-navigation ul li a {
+.primary-navigation a {
     text-decoration: none;
-    color: #fff;
-    font-size: 1.1rem;
+    color: white;
     font-weight: bold;
-    transition: color 0.3s;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
 }
 
-.primary-navigation ul li a:hover,
-.primary-navigation ul li a.active {
-    color: #16A085;
+.primary-navigation a:hover {
+    color: #e67e22; /* Coral color on hover */
 }
 
 /* Landing Section */
@@ -54,15 +53,18 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, #1F618D, #2980B9);
+    background: linear-gradient(135deg, #1abc9c, #16a085); /* Gradient with teal and dark blue */
     color: white;
     text-align: center;
+    padding: 0 20px;
 }
 
 .landing h1 {
-    font-size: 5rem;
-    letter-spacing: 1px;
-    margin: 0;
+    font-size: 4.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .landing .introduction {
@@ -70,129 +72,59 @@ body {
     max-width: 800px;
     margin-top: 20px;
     line-height: 1.6;
-    color: #ECF0F1;
+    color: #ecf0f1;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* Sections */
-section {
-    padding: 60px 20px;
-}
-
-/* Introduction Section */
-.intro-section {
-    background-color: #ECF0F1;
-    color: #2C3E50;
-    text-align: center;
-}
-
-.intro-section h1 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-}
-
-/* Topics Section */
-.topics-section {
-    background-color: #F9F9F9;
-}
-
-.topics-section h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    color: #1F618D;
-    margin-bottom: 40px;
-}
-
-.topics-list {
+/* Cards Section */
+.cards-section {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #8e44ad, #3498db); /* Purple-blue gradient */
+    min-height: calc(100vh - 100px); /* Adjusted for the nav bar height */
     display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
     justify-content: center;
 }
 
-.topic-category {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 250px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.topic-category:hover {
+.card {
+    background: linear-gradient(to bottom right, #9b59b6, #2980b9); /* Purple to blue gradient for the card */
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: #fff;
+}
+
+.card:hover {
     transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.topic-category h3 {
-    font-size: 1.6rem;
-    color: #2C3E50;
-    margin-bottom: 15px;
+.card .content {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px); /* Slight blur effect for modern touch */
 }
 
-.topic-category ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.topic-category ul li {
-    font-size: 1rem;
-    color: #34495E;
-    margin: 5px 0;
-}
-
-.topic-category ul li ul li {
-    font-size: 0.9rem;
-    color: #7F8C8D;
-}
-
-/* Applications Section */
-.applications-section {
-    background-color: #F4F6F9;
-    text-align: center;
-}
-
-.applications-section h2 {
-    font-size: 2.5rem;
-    color: #1F618D;
-    margin-bottom: 20px;
-}
-
-.applications-section ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.applications-section ul li {
-    font-size: 1.1rem;
-    color: #34495E;
-    margin: 15px 0;
-}
-
-/* Project Repository Section */
-.project-repository-section {
-    background-color: #ECF0F1;
-    color: #34495E;
-    text-align: center;
-}
-
-.project-repository-section h2 {
-    font-size: 2.5rem;
-    color: #1F618D;
-    margin-bottom: 20px;
-}
-
-.project-repository-section ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.project-repository-section ul li {
-    font-size: 1.1rem;
-    color: #34495E;
+.card .content h3 {
     margin: 10px 0;
+    font-size: 1.2rem;
 }
 
-/* Dots Navigation */
+.card .content a:hover {
+    text-decoration: none;
+}
+
+/* Navigation Dots */
 .dots-navigation {
     position: fixed;
     right: 20px;
@@ -203,30 +135,39 @@ section {
     gap: 15px;
 }
 
-.dot1, .dot2, .dot3, .dot4 {
+.dot1, .dot2 {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #1F618D;
-    transition: background-color 0.3s;
+    background-color: #bdc3c7; /* Light gray for inactive dots */
+    transition: background-color 0.3s ease;
 }
 
-.dot1.active, .dot2.active, .dot3.active, .dot4.active {
-    background-color: #16A085;
+.dot1:hover, .dot2:hover {
+    background-color: #e67e22; /* Change to coral color on hover */
 }
 
-.dot1:hover, .dot2:hover, .dot3:hover, .dot4:hover {
-    background-color: #16A085;
+.dot1.active, .dot2.active {
+    background-color: #2ecc71; /* Green color when active */
 }
 
-/* Utility Classes */
-.text-highlight {
-    color: #16A085;
-    font-weight: bold;
+/* Smooth Scrolling for Sections */
+#landing,
+#cards {
+    scroll-margin-top: var(--scroll-padding, 0px); /* Smooth scrolling with padding */
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
 
+    .landing h1 {
+        font-size: 3rem;
+    }
 
-
-
-
+    .landing .introduction {
+        font-size: 1rem;
+    }
+}
