@@ -8,8 +8,9 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F0F0F0;
+    background-color: #F9FAFB; /* Light gray background */
     color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Navigation */
@@ -18,9 +19,10 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #4A90E2; /* Soft Blue */
     padding: 20px;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow on the navbar */
 }
 
 .primary-navigation ul {
@@ -40,11 +42,12 @@ body {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .primary-navigation ul li a:hover {
-    color: #F1C40F; /* Hover effect */
+    color: #F1C40F; /* Golden yellow on hover */
+    transform: scale(1.1); /* Slight zoom on hover */
 }
 
 /* Landing Section */
@@ -54,15 +57,19 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, #005F73, #0A3D3F);
+    background: linear-gradient(to bottom, #2C3E50, #34495E); /* Dark blue/gray gradient */
     color: white;
     text-align: center;
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
 }
 
 .landing h1 {
     font-size: 5rem;
     letter-spacing: 2px;
     margin: 0;
+    transition: transform 0.5s ease;
 }
 
 .landing .introduction {
@@ -70,13 +77,39 @@ body {
     max-width: 900px;
     margin-top: 20px;
     line-height: 1.6;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out 0.5s forwards; /* Fade-in and slide-up effect */
+}
+
+/* Fade-in on Scroll */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Cards Section */
 .cards-section {
     padding: 40px 20px;
-    background: #A7D8D8;
+    background: #D1E8E2; /* Soft teal background */
     min-height: calc(100vh - 100px);
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards;
 }
 
 .container {
@@ -89,35 +122,43 @@ body {
 
 /* Card Styling */
 .card {
-    background: linear-gradient(to bottom, #F4A261, #E76F51);
+    background: linear-gradient(to bottom, #FF8C00, #F39C12); /* Warm gradient from orange to yellow */
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scale and shadow effect */
     display: block;
     text-decoration: none;
     color: white;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px); /* Lift effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* More shadow on hover */
 }
 
 .card .content {
     padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .content {
+    transform: translateY(-5px); /* Slight upward movement for text */
 }
 
 .card .name {
     font-size: 1.6em;
     font-weight: bold;
-    color: #2C3E50;
+    color: #2C3E50; /* Dark blue for the name */
     margin: 0 0 10px;
+    text-transform: capitalize;
 }
 
 .card p {
     font-size: 1.1em;
     margin: 5px 0;
+    color: #34495E; /* Slightly lighter text for Roll No and USN */
 }
 
 /* Dots Navigation */
@@ -129,19 +170,27 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 1.5s forwards;
 }
 
 .dot1, .dot2 {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #333;
-    transition: background-color 0.3s ease;
+    background-color: #4A90E2; /* Soft blue dots */
+    transition: background-color 0.3s ease, transform 0.2s ease;
     cursor: pointer;
 }
 
 .dot1:hover, .dot2:hover {
-    background-color: #F1C40F; /* Hover effect */
+    background-color: #F1C40F; /* Golden hover effect */
+    transform: scale(1.2); /* Grow effect */
+}
+
+/* Smooth Scroll for Sections */
+#landing, #cards {
+    scroll-margin-top: 10px; /* Prevent overlap with fixed navigation */
 }
 
 /* Responsive Styles */
@@ -159,6 +208,7 @@ body {
         font-size: 1rem;
     }
 }
+
 
 
 
