@@ -3,36 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the unified styles.css -->
+    <title>DAA Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <nav class="primary-navigation">
         <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="course.html">Course Details</a></li>
+            <li><a href="#landing">Home</a></li>
+            <li><a href="#cards">Team</a></li>
         </ul>
     </nav>
 
     <!-- Landing Section -->
-    <section class="landing">
-        <h1>Welcome to the Design & Analysis of Algorithms</h1>
+    <section id="landing" class="landing">
+        <h1>DAA Portfolio</h1>
         <p class="introduction">
-            This course focuses on understanding and mastering the essential algorithms and data structures to
-            solve real-world computational problems efficiently. Dive into topics ranging from sorting to advanced graph algorithms.
+            This course focuses on the design and analysis of algorithms and their real-world applications. The objective is to develop the capability to write algorithms for specific tasks, implement them using suitable data structures, and improve their efficiency. This course bridges theoretical knowledge and practical applications, making it crucial for solving computational problems.
         </p>
     </section>
 
-    <!-- Dots Navigation -->
+    <!-- Cards Section -->
+    <section id="cards" class="cards-section">
+        <div class="container">
+            <!-- Card 1 -->
+            <a href="#" class="card">
+                <div class="content">
+                    <h3>Name: John Doe</h3>
+                    <h3>Roll No: 12345</h3>
+                    <h3>USN: ABC123</h3>
+                </div>
+            </a>
+            <!-- Card 2 -->
+            <a href="#" class="card">
+                <div class="content">
+                    <h3>Name: Jane Doe</h3>
+                    <h3>Roll No: 67890</h3>
+                    <h3>USN: XYZ789</h3>
+                </div>
+            </a>
+            <!-- Card 3 -->
+            <a href="#" class="card">
+                <div class="content">
+                    <h3>Name: Mike Ross</h3>
+                    <h3>Roll No: 11223</h3>
+                    <h3>USN: DEF456</h3>
+                </div>
+            </a>
+            <!-- Card 4 -->
+            <a href="#" class="card">
+                <div class="content">
+                    <h3>Name: Rachel Zane</h3>
+                    <h3>Roll No: 44556</h3>
+                    <h3>USN: GHI789</h3>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Navigation Dots -->
     <div class="dots-navigation">
-        <a href="#introduction" class="dot1"></a>
-        <a href="#topics" class="dot2"></a>
-        <a href="#applications" class="dot3"></a>
-        <a href="#project-repository" class="dot4"></a>
+        <a href="#landing" class="dot1"></a>
+        <a href="#cards" class="dot2"></a>
     </div>
 </body>
 </html>
+
 
 
 
