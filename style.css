@@ -46,128 +46,65 @@ body {
     color: #e67e22; /* Coral color on hover */
 }
 
-/* Landing Section */
-.landing {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* Course Details Section */
+.course-details {
+    padding: 60px 20px;
     background: linear-gradient(135deg, #1abc9c, #16a085); /* Gradient with teal and dark blue */
     color: white;
     text-align: center;
-    padding: 0 20px;
 }
 
-.landing h1 {
-    font-size: 4.5rem;
-    letter-spacing: 2px;
+.course-details h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
     margin-bottom: 20px;
-    font-weight: 700;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
-.landing .introduction {
+.course-details .intro-text {
     font-size: 1.2rem;
     max-width: 800px;
-    margin-top: 20px;
+    margin: 0 auto 40px auto;
     line-height: 1.6;
     color: #ecf0f1;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* Cards Section */
-.cards-section {
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #8e44ad, #3498db); /* Purple-blue gradient */
-    min-height: calc(100vh - 100px); /* Adjusted for the nav bar height */
-    display: flex;
-    justify-content: center;
-}
-
-.container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 800px;
+.course-details .topics {
+    text-align: left;
+    max-width: 900px;
     margin: 0 auto;
 }
 
-.card {
-    background: linear-gradient(to bottom right, #9b59b6, #2980b9); /* Purple to blue gradient for the card */
-    border-radius: 15px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none;
-    color: #fff;
+.course-details h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #e67e22; /* Coral color for headings */
 }
 
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.course-details ul {
+    list-style-type: none;
+    padding-left: 0;
 }
 
-.card .content {
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px); /* Slight blur effect for modern touch */
-}
-
-.card .content h3 {
+.course-details ul li {
     margin: 10px 0;
-    font-size: 1.2rem;
 }
 
-.card .content a:hover {
-    text-decoration: none;
+.course-details .real-world-applications {
+    margin-bottom: 20px;
 }
 
-/* Navigation Dots */
-.dots-navigation {
+.course-details .project-repository {
+    text-align: left;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #16a085;
+    color: white;
+    text-align: center;
+    padding: 20px;
     position: fixed;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    width: 100%;
+    bottom: 0;
 }
 
-.dot1, .dot2 {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #bdc3c7; /* Light gray for inactive dots */
-    transition: background-color 0.3s ease;
-}
-
-.dot1:hover, .dot2:hover {
-    background-color: #e67e22; /* Change to coral color on hover */
-}
-
-.dot1.active, .dot2.active {
-    background-color: #2ecc71; /* Green color when active */
-}
-
-/* Smooth Scrolling for Sections */
-#landing,
-#cards {
-    scroll-margin-top: var(--scroll-padding, 0px); /* Smooth scrolling with padding */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-    }
-
-    .landing h1 {
-        font-size: 3rem;
-    }
-
-    .landing .introduction {
-        font-size: 1rem;
-    }
-}
