@@ -1,111 +1,128 @@
-style.css
-/* Reset default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* General Reset */
+html {
+    scroll-behavior: smooth;
+    scroll-padding: var(--scroll-padding, 0rem);
 }
 
-/* Global Styles */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px; /* Adding padding to the body to prevent sticking at the top */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Aligns content towards the top */
-    min-height: 100vh;
-}
-
-/* Main Container */
-section {
-    background-color: white;
-    padding: 2rem;
-    width: 90%;
-    max-width: 800px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-align: center;
-    margin-top: 30px; /* Adding margin to ensure there's space from the top */
-}
-
-/* Header */
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 2rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-}
-
-header h1 {
-    font-size: 2rem;
-    margin: 0;
-}
-
-header p {
-    margin: 1rem 0 0;
-}
-
-/* Section Titles */
-h2 {
-    color: #4CAF50;
-    margin-bottom: 1rem;
-}
-
-/* List Items */
-ul {
-    list-style: none;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
-ul li {
-    background-color: #e7f7e7;
-    margin-bottom: 0.5rem;
-    padding: 0.75rem;
-    border-radius: 5px;
+/* Landing Section */
+.landing {
+    height: 100vh; /* Full-screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #007BFF, #004D99);
+    color: white;
+    text-align: center;
 }
 
-/* Links */
-a {
-    color: #4CAF50;
+.landing h1 {
+    font-size: 7rem;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.landing .introduction {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+/* Cards Section */
+
+.cards-section {
+    padding: 40px 20px;
+    background: #40e0db;
+    min-height: calc(100vh - 100px); /* Full-screen height for better scrolling */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 20px; /* Spacing between cards */
+    max-width: 700px; /* Container width */
+    margin: 0 auto; /* Center container */
+    
+}
+
+/* Card Link Styling */
+.card {
+    background: linear-gradient(to bottom, #ff0000, #990000);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease; /* Hover effect */
+    display: block; /* Ensure the card takes the full block */
     text-decoration: none;
-    font-weight: bold;
+    color: rgb(255, 255, 255);
 }
 
-a:hover {
-    text-decoration: underline;
+.card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
-/* Definition List */
-dl dt {
-    font-weight: bold;
-    color: #333;
-    margin-top: 1rem;
+.card img {
+    width: 100%;
+    height: 250px; /* Smaller images */
+    object-fit: cover;
+    
 }
 
-dl dd {
-    margin-left: 1.5rem;
-    color: #666;
+.card .content {
+    padding: 10px; /* Spacing around text content */
 }
 
-/* Blockquote */
-blockquote {
-    font-style: italic;
-    color: #555;
-    border-left: 4px solid #4CAF50;
-    padding-left: 1rem;
-    margin-top: 2rem;
+.card .content h3 {
+    margin: 10px 0;
+    font-size: 1.2em; /* Smaller headings */
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    section {
-        padding: 1.5rem;
-    }
+.card .content a:hover {
+    text-decoration: none;
+}
 
-    header {
-        padding: 1.5rem;
-    }
+/* Remove underline from card itself */
+.card:focus,
+.card:active {
+    outline: none;
+    text-decoration: none;
+}
+
+/* Dots Navigation */
+.dots-navigation {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dot1, .dot2 {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #0c0c0c;
+    transition: background-color 0.3s;
+}
+
+.dot1.active, .dot2.active,
+.dot1:hover, .dot2:hover {
+    background-color: #83e612;
+}
+
+/* Smooth Scrolling for Sections */
+#landing,
+#cards {
+    scroll-margin-top: 10px; /* Prevent overlap with fixed navigation */
 }
