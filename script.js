@@ -1,12 +1,13 @@
-// Get the navigation element
-const navigation = document.querySelector(".primary-navigation");
+document.addEventListener('DOMContentLoaded', function () {
+    const navigation = document.querySelector(".primary-navigation");
+    
+    if (navigation) {
+        const navigationHeight = navigation.offsetHeight;
+        document.documentElement.style.setProperty(
+            "--scroll-padding", 
+            navigationHeight + "px"
+        );
+    }
+});
 
-// Get the height of the navigation bar
-const navigationHeight = navigation.offsetHeight;
-
-// Set the scroll-padding CSS variable dynamically
-document.documentElement.style.setProperty(
-  "--scroll-padding",
-  navigationHeight + "px"
-);
 
