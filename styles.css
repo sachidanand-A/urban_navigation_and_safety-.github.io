@@ -1,1 +1,226 @@
+/* General Reset */
+html {
+    scroll-behavior: smooth;
+    scroll-padding: var(--scroll-padding, 0rem);
+}
 
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ECF0F1;
+    color: #34495E;
+}
+
+/* Primary Navigation */
+.primary-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #1F618D;
+    padding: 10px 20px;
+    z-index: 10;
+}
+
+.primary-navigation ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.primary-navigation ul li {
+    margin: 0 15px;
+}
+
+.primary-navigation ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.primary-navigation ul li a:hover,
+.primary-navigation ul li a.active {
+    color: #16A085;
+}
+
+/* Landing Section */
+.landing {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #1F618D, #2980B9);
+    color: white;
+    text-align: center;
+}
+
+.landing h1 {
+    font-size: 5rem;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.landing .introduction {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin-top: 20px;
+    line-height: 1.6;
+    color: #ECF0F1;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+}
+
+/* Introduction Section */
+.intro-section {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    text-align: center;
+}
+
+.intro-section h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+/* Topics Section */
+.topics-section {
+    background-color: #F9F9F9;
+}
+
+.topics-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #1F618D;
+    margin-bottom: 40px;
+}
+
+.topics-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.topic-category {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.topic-category:hover {
+    transform: scale(1.05);
+}
+
+.topic-category h3 {
+    font-size: 1.6rem;
+    color: #2C3E50;
+    margin-bottom: 15px;
+}
+
+.topic-category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.topic-category ul li {
+    font-size: 1rem;
+    color: #34495E;
+    margin: 5px 0;
+}
+
+.topic-category ul li ul li {
+    font-size: 0.9rem;
+    color: #7F8C8D;
+}
+
+/* Applications Section */
+.applications-section {
+    background-color: #F4F6F9;
+    text-align: center;
+}
+
+.applications-section h2 {
+    font-size: 2.5rem;
+    color: #1F618D;
+    margin-bottom: 20px;
+}
+
+.applications-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.applications-section ul li {
+    font-size: 1.1rem;
+    color: #34495E;
+    margin: 15px 0;
+}
+
+/* Project Repository Section */
+.project-repository-section {
+    background-color: #ECF0F1;
+    color: #34495E;
+    text-align: center;
+}
+
+.project-repository-section h2 {
+    font-size: 2.5rem;
+    color: #1F618D;
+    margin-bottom: 20px;
+}
+
+.project-repository-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.project-repository-section ul li {
+    font-size: 1.1rem;
+    color: #34495E;
+    margin: 10px 0;
+}
+
+/* Dots Navigation */
+.dots-navigation {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dot1, .dot2, .dot3, .dot4 {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #1F618D;
+    transition: background-color 0.3s;
+}
+
+.dot1.active, .dot2.active, .dot3.active, .dot4.active {
+    background-color: #16A085;
+}
+
+.dot1:hover, .dot2:hover, .dot3:hover, .dot4:hover {
+    background-color: #16A085;
+}
+
+/* Utility Classes */
+.text-highlight {
+    color: #16A085;
+    font-weight: bold;
+}
